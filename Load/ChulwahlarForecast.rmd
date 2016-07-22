@@ -1,0 +1,52 @@
+---
+title: "Chulwahlar Export Forecast"
+author: "Vishal & Blake"
+date: "July 17, 2016"
+output: 
+      html_document:
+          keep_md:  true
+---
+
+###Loading data into R  
+As a first step we will load data into R using "Load/Chulwalar.R" file.  
+
+```{r }
+getwd()
+library(knitr)
+opts_chunk$set(echo = FALSE, cache=FALSE)
+read_chunk('Chulwalar.R')
+#read_chunk('Test.R')
+
+```
+
+```{r LoadChulwalarData, echo=FALSE}
+
+```
+
+###str function on Timeseries of Total As Is data and Efak As Is data.  
+
+```{r}
+str(TotalAsIs)
+str(EfakAsIs)
+```
+
+
+```{r }
+getwd()
+setwd('../Analysis')
+library(knitr)
+opts_chunk$set(echo = FALSE, cache=FALSE)
+read_chunk('ChulwalarAnalysis.R')
+#read_chunk('Test.R')
+
+```
+
+```{r ChulwalarAnalysis, echo=FALSE}
+
+```
+
+
+
+
+
+
