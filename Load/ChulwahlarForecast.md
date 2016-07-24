@@ -6,19 +6,8 @@ July 17, 2016
 As a first step we will load data into R using "Load/Chulwalar.R" file.  
 
 
-```r
-getwd()
-```
-
 ```
 ## [1] "C:/Users/vishal/Desktop/SMU/Doing Datascience/Case Study/Unit10/Load"
-```
-
-```r
-library(knitr)
-opts_chunk$set(echo = FALSE, cache=FALSE)
-read_chunk('Chulwalar.R')
-#read_chunk('Test.R')
 ```
 
 
@@ -26,7 +15,7 @@ read_chunk('Chulwalar.R')
 ## [1] "C:/Users/vishal/Desktop/SMU/Doing Datascience/Case Study/Unit10/Data"
 ```
 
-###str function on Timeseries of Total As Is data and Efak As Is data.  
+###str function o/p on Timeseries of Total As Is data and Total As Is (2014) data.  
 
 
 ```
@@ -34,27 +23,11 @@ read_chunk('Chulwalar.R')
 ```
 
 ```
-##  Time-Series [1:72] from 2008 to 2014: 416589 472565 466539 370774 457741 384817 464502 389013 508370 495598 ...
+##  Time-Series [1:12] from 2014 to 2015: 4308161 4155378 3924332 3659121 3898758 3313891 3595106 3502426 5619059 5274287 ...
 ```
 
 
-
-```
-## [1] "C:/Users/vishal/Desktop/SMU/Doing Datascience/Case Study/Unit10/Load"
-```
-
-
-```
-## [1] "C:/Users/vishal/Desktop/SMU/Doing Datascience/Case Study/Unit10/Load"
-```
-
-```
-## [1] 0.9183402
-```
-
-```
-## [1] 0.9055081
-```
+**As a next step, please click on "Analysis/AnalysisandForecast.md" file for further insights**
 
 
 

@@ -10,7 +10,7 @@ output:
 ###Loading data into R  
 As a first step we will load data into R using "Load/Chulwalar.R" file.  
 
-```{r }
+```{r echo=FALSE}
 getwd()
 library(knitr)
 opts_chunk$set(echo = FALSE, cache=FALSE)
@@ -23,27 +23,16 @@ read_chunk('Chulwalar.R')
 
 ```
 
-###str function on Timeseries of Total As Is data and Efak As Is data.  
+###str function o/p on Timeseries of Total As Is data and Total As Is (2014) data.  
 
 ```{r}
 str(TotalAsIs)
-str(EfakAsIs)
+#str(EfakAsIs)
+str(TotalAsIs_2014)
 ```
 
 
-```{r }
-getwd()
-setwd('../Analysis')
-library(knitr)
-opts_chunk$set(echo = FALSE, cache=FALSE)
-read_chunk('ChulwalarAnalysis.R')
-#read_chunk('Test.R')
-
-```
-
-```{r ChulwalarAnalysis, echo=FALSE}
-
-```
+**As a next step, please click on "Analysis/AnalysisandForecast.md" file for further insights**
 
 
 

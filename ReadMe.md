@@ -22,7 +22,7 @@ Following is the directory structure for this project:
               |------> Paper     
               
   
-As a starting point, please exececute "Load/ChulwahlarForecast.rmd" to load data and convert the data into a timeseries.  
-
+* Step 1 : Please click on "Load/ChulwahlarForecast.md" to load data and convert the data into a timeseries.  
+* Step 2 : Please click on "Analysis/AnalysisandForecast.md" file for further insights for forecasts.  
 
 ###

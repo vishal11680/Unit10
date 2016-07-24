@@ -1,0 +1,170 @@
+---
+title: "Analysis and Forecasts"
+author: "Vishal & Blake"
+date: "July 23, 2016"
+output: 
+  html_document:
+      keep_md:  true
+---
+
+### Analyzing and Forecasting Data
+
+
+* *Setting current working directory to Analysis folder*  
+    ```{r echo=FALSE}  
+      #getwd()  
+      # Setting current working directory to Analysis folder so we can access files in this folder directly.  
+      setwd('../Analysis')  
+    ```  
+
+* *Loading knitr library*  
+
+```{r echo=FALSE}
+#Load knitr and fpp library
+library(knitr)
+```  
+
+* *Seeting chunk options and reading chunks from R scripts*  
+```{r echo=FALSE}
+#Setting chunk options before reading R script with knitr chunks.
+opts_chunk$set(echo = FALSE, cache=FALSE)
+
+#Read chunks from R Script file here
+read_chunk('ChulwalarAnalysis.R')
+#read_chunk('Test.R')
+
+```  
+  
+```{r ChulwalarAnalysis, echo=FALSE}
+
+```  
+
+###Summary functions for lm() and tslm() functions
+
+*Summary of model fitted using lm() function*  
+```{r echo=FALSE}
+summary(TotalAsIs_lm)
+```  
+*Summary of model fitted using tslm() function*  
+```{r echo=FALSE}
+summary(TotalAsIs_tslm)
+```  
+
+###Using STL method for decomposition - summary on STL
+
+```{r echo=FALSE}
+summary(TotalAsIs_stl)
+plot(TotalAsIs_stl, col="black", main="TotalAsIs_stl")
+
+```  
+
+*Plotting trend component that was derived by STL function*
+```{r echo=FALSE}
+plot(TotalAsIs_stl$time.series[,"trend"], col="black")
+```
+
+
+*Modification of seasonality component*
+```{r echo=FALSE}
+monthplot(TotalAsIs_stl$time.series[,"seasonal"], main="", ylab="Seasonal")
+```
+
+### Correlation with external indicators
+
+The indicators are as follows:
+
+* Monthly Change in Export Price Index (CEPI)
+```{r}
+plot(CEPI, main="CEPI")
+cor(TotalAsIs, CEPI)
+```
+
+* Monthly Satisfaction Index (SI) government based data
+```{r}  
+plot(SIGov, main="SIGov")
+cor(TotalAsIs, SIGov)
+```  
+
+* Average monthly temperatures in Chulwalar
+```{r}
+plot(Temperature, main="Temperature")
+cor(TotalAsIs, Temperature)
+```  
+
+* Monthly births in Chulwalar
+```{r}
+plot(Births, main="Births")
+cor(TotalAsIs, Births)
+```  
+
+* Monthly Satisfaction Index (SI) external index 
+```{r}
+plot(SIExtern, main="SIExtern")
+cor(TotalAsIs, SIExtern)
+```  
+
+* Yearly Exports from Urbano
+```{r}
+plot(UrbanoExports, main="UrbanoExports")
+cor(TotalAsIs, UrbanoExports)
+```  
+
+* Yearly number of Globalisation Party members in Chulwalar
+```{r}
+plot(GlobalisationPartyMembers, main="GlobalisationPartyMembers")
+cor(TotalAsIs, GlobalisationPartyMembers)
+```  
+
+
+* Monthly Average Export Price Index for Chulwalar
+```{r}
+#plot(AEPI, main="AEPI")
+#cor(TotalAsIs, AEPI)
+```  
+
+* Monthly Producer Price Index (PPI) for Etel in Chulwalar
+```{r}
+#plot(PPIEtel, main="PPIEtel")
+#cor(TotalAsIs, PPIEtel)
+```  
+
+
+* National Holidays
+```{r}
+#plot(NationalHolidays, main="NationalHolidays")
+#cor(TotalAsIs, NationalHolidays)
+```  
+
+
+* Chulwalar Index (Total value of all companies in Chulwalar)
+```{r}
+#plot(ChulwalarIndex, main="ChulwalarIndex")
+#cor(TotalAsIs, ChulwalarIndex)
+```  
+
+
+
+* Monthly Inflation rate in Chulwalar  
+```{r}
+#plot(Inflation, main="Inflation")
+#cor(TotalAsIs, Inflation)
+```  
+
+
+
+*	Proposed spending for National Holidays
+```{r}
+#plot(IndependenceDayPresents, main="IndependenceDayPresents")
+#cor(TotalAsIs, IndependenceDayPresents)
+```  
+The indicators will be converted into individual  vectors and subsequently converted into time series. The correlation of the indicators will then be tested against the As Is exports for Chulwalar. 
+
+
+
+
+###Forecasting models
+
+* Ses : Simple Exponential Smoothing model
+* Holts Model  
+* Holts Winter Model  
+
