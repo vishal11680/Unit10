@@ -1,0 +1,38 @@
+---
+title: "Summary"
+author: "Vishal & Blake"
+date: "July 24, 2016"
+output: 
+  html_document:
+          keep_md:  true
+---
+
+# Reading previous source files  
+
+```{r echo=FALSE}  
+      #getwd()  
+      # Setting current working directory to Analysis folder so we can access files in this folder directly.  
+      setwd('../Paper')  
+      library(knitr)
+      library(ggplot2)
+      opts_chunk$set(echo = FALSE, cache=FALSE)
+      read_chunk('SummaryCode.R')
+```  
+
+```{r SummaryCode, echo=FALSE}
+
+```
+
+# Comparing AIC, AICc and BIC for all the models
+
+Below 3 separate graphs show plots for AIC, AICc and BIC for all the models. After looking at them, the min AICc , min AICc and min BIC, all are from Holt Winter's additive model.
+Hence, it appears that Holt Winters Additive model is the **best model** to choose for forecasting exports in 2014.
+
+
+```{r }
+  ggplot(stat_df, aes(x=ModelName, y=AIC, fill=ModelName)) + geom_bar(stat='identity',width=0.5, position="dodge")  
+  ggplot(stat_df, aes(x=ModelName, y=AICc, fill=ModelName)) + geom_bar(stat='identity',width=0.5, position="dodge")  
+  ggplot(stat_df, aes(x=ModelName, y=BIC, fill=ModelName)) + geom_bar(stat='identity',width=0.5, position="dodge")  
+```
+    
+    

@@ -1,0 +1,111 @@
+---
+title: "Forecasting Models"
+author: "Vishal & Blake"
+date: "July 24, 2016"
+output: 
+  html_document:
+      keep_md:  true
+---
+
+
+* *Setting current working directory to Analysis folder*  
+    ```{r echo=FALSE}  
+      #getwd()  
+      # Setting current working directory to Analysis folder so we can access files in this folder directly.  
+      setwd('../Analysis')  
+    ```  
+
+* *Loading knitr library*  
+
+```{r echo=FALSE}
+#Load knitr and fpp library
+library(knitr)
+```  
+
+* *Seeting chunk options and reading chunks from R scripts*  
+```{r echo=FALSE}
+#Setting chunk options before reading R script with knitr chunks.
+opts_chunk$set(echo = FALSE, cache=FALSE)
+
+#Read chunks from R Script file here
+read_chunk('ForecastCode.R')
+#read_chunk('Test.R')
+
+```  
+  
+```{r ForecastModels, echo=FALSE}
+
+```
+
+#1. Plot SES model
+
+* *Simple Exponential Smoothing* : In this type of model, forecast are calculated using averages from past values. Weight on average values reduce as values become older in timeseries.  We will plot a Simple Exponential Smoothing chart for "TotalAsIs" timeseries that contains observed data. Simple Exponential Smoothing can be used in case there is no trend and/or seasonal component in the data.  
+
+*In below plot we are forecasting 12 values using SES model.*  
+
+
+```{r echo=FALSE}
+plot(Model_ses, plot.conf=FALSE, ylab="Exports Chulwalar  )", xlab="Year", main="", fcol="white", type="o")
+lines(fitted(Model_ses), col="green", type="o")
+lines(Model_ses$mean, col="blue", type="o")
+legend("topleft",lty=1, col=c(1,"green"), c("data", expression(alpha == 0.671)),pch=1)
+
+#summary(Model_ses)
+```
+
+
+* *Holt's various models (linear, exponential, damped, damped with exponential)
+
+    * Linear Trend  
+    ```{r echo=FALSE}
+    #summary(Model_holt_1)
+    plot(Model_holt_1)
+    plot(Model_holt_1$model$state)
+    ```
+
+    * Exponential Trend  
+    ```{r echo=FALSE}
+    #summary(Model_holt_2)
+    plot(Model_holt_2)
+    plot(Model_holt_2$model$state)
+    ```
+    
+    * Dampened Trend  
+    ```{r echo=FALSE}
+    #summary(Model_holt_3)
+    plot(Model_holt_3)
+    plot(Model_holt_3$model$state)
+    ```
+    
+    * Dampened with Exponential Trend  
+    ```{r echo=FALSE}
+    #summary(Model_holt_4)
+    plot(Model_holt_4)
+    plot(Model_holt_4$model$state)
+    ```
+    
+    
+
+# Combined Chart for all models  
+
+```{r echo=FALSE}
+plot(Model_holt_1, plot.conf=FALSE, ylab="Exports Chulwalar  )", xlab="Year", main="", fcol="white", type="o")
+lines(fitted(Model_ses), col="purple", type="o")
+lines(fitted(Model_holt_1), col="blue", type="o")
+lines(fitted(Model_holt_2), col="red", type="o")
+lines(fitted(Model_holt_3), col="green", type="o")
+lines(fitted(Model_holt_4), col="orange", type="o")
+lines(Model_ses$mean, col="purple", type="o")
+lines(Model_holt_1$mean, col="blue", type="o")
+lines(Model_holt_2$mean, col="red", type="o")
+lines(Model_holt_3$mean, col="green", type="o")
+lines(Model_holt_4$mean, col="orange", type="o")
+legend("topleft",lty=1, col=c(1,"purple","blue","red","green","orange"), c("data", "SES","Holts auto", "Exponential", "Additive Damped", "Multiplicative Damped"),pch=1)
+```
+
+
+
+    
+    
+    
+    

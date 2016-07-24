@@ -29,5 +29,6 @@ Following is the directory structure for this project:
   
 * Step 1 : Please click on "Load/ChulwahlarForecast.md" to load data and convert the data into a timeseries.  
 * Step 2 : Please click on "Analysis/AnalysisandForecast.md" file for further insights for forecasts.  
+* Step 3 : Evaluation of different ForecastModels is done at "Analysis/ForecastingModels.md".  
+* Step 4 : Go to "Paper" folder and click on "Summary.md" to identify best model.
 
-###
