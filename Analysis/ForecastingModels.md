@@ -3,6 +3,12 @@ Vishal & Blake
 July 24, 2016  
 
 
+###Forecasting models  
+
+* Ses : Simple Exponential Smoothing model  
+* Holts Model  
+* Holt Winter Model  
+
 * *Setting current working directory to Analysis folder*  
 
 
@@ -61,19 +67,19 @@ July 24, 2016
 ## Loading required package: lmtest
 ```
 
-#1. Plot SES model
+* Plot SES model
 
-* *Simple Exponential Smoothing* : In this type of model, forecast are calculated using averages from past values. Weight on average values reduce as values become older in timeseries.  We will plot a Simple Exponential Smoothing chart for "TotalAsIs" timeseries that contains observed data. Simple Exponential Smoothing can be used in case there is no trend and/or seasonal component in the data.  
+  * *Simple Exponential Smoothing* : In this type of model, forecast are calculated using averages from past values. Weight on average values reduce as values become older in timeseries.  We will plot a Simple Exponential Smoothing chart for "TotalAsIs" timeseries that contains observed data. Simple Exponential Smoothing can be used in case there is no trend and/or seasonal component in the data.  
 
-*In below plot we are forecasting 12 values using SES model.*  
+    *In below plot we are forecasting 12 values using SES model.*  
 
 
 ![](ForecastingModels_files/figure-html/unnamed-chunk-4-1.png)<!-- -->
 
 
-* *Holt's various models (linear, exponential, damped, damped with exponential)
+* Holt's various models (auto, exponential, damped, damped with exponential)  
 
-    * Linear Trend  
+    * Holt Auto    
     ![](ForecastingModels_files/figure-html/unnamed-chunk-5-1.png)<!-- -->![](ForecastingModels_files/figure-html/unnamed-chunk-5-2.png)<!-- -->
 
     * Exponential Trend  
@@ -85,16 +91,17 @@ July 24, 2016
     * Dampened with Exponential Trend  
     ![](ForecastingModels_files/figure-html/unnamed-chunk-8-1.png)<!-- -->![](ForecastingModels_files/figure-html/unnamed-chunk-8-2.png)<!-- -->
     
-    
 
-# Combined Chart for all models  
+
+# SES and Holts models  
 
 ![](ForecastingModels_files/figure-html/unnamed-chunk-9-1.png)<!-- -->
 
+# Holt Winters' models  
 
-# Comparison of AIC, AICc and BICs for all models  
-    
-    ![](ForecastingModels_files/figure-html/unnamed-chunk-10-1.png)<!-- -->![](ForecastingModels_files/figure-html/unnamed-chunk-10-2.png)<!-- -->![](ForecastingModels_files/figure-html/unnamed-chunk-10-3.png)<!-- -->
+![](ForecastingModels_files/figure-html/unnamed-chunk-10-1.png)<!-- -->
+
+
     
     
     

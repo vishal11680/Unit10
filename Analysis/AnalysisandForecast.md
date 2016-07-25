@@ -157,49 +157,49 @@ July 23, 2016
 
 The indicators are as follows:
 
-* Monthly Change in Export Price Index (CEPI)
+* Monthly Change in Export Price Index (CEPI)  
 ![](AnalysisandForecast_files/figure-html/unnamed-chunk-9-1.png)<!-- -->
 
 ```
 ## [1] 0.9183402
 ```
 
-* Monthly Satisfaction Index (SI) government based data
+* Monthly Satisfaction Index (SI) government based data  
 ![](AnalysisandForecast_files/figure-html/unnamed-chunk-10-1.png)<!-- -->
 
 ```
 ## [1] 0.7033182
 ```
 
-* Average monthly temperatures in Chulwalar
+* Average monthly temperatures in Chulwalar  
 ![](AnalysisandForecast_files/figure-html/unnamed-chunk-11-1.png)<!-- -->
 
 ```
 ## [1] 0.8787973
 ```
 
-* Monthly births in Chulwalar
+* Monthly births in Chulwalar  
 ![](AnalysisandForecast_files/figure-html/unnamed-chunk-12-1.png)<!-- -->
 
 ```
 ## [1] 0.829382
 ```
 
-* Monthly Satisfaction Index (SI) external index 
+* Monthly Satisfaction Index (SI) external index  
 ![](AnalysisandForecast_files/figure-html/unnamed-chunk-13-1.png)<!-- -->
 
 ```
 ## [1] 0.5400499
 ```
 
-* Yearly Exports from Urbano
+* Yearly Exports from Urbano  
 ![](AnalysisandForecast_files/figure-html/unnamed-chunk-14-1.png)<!-- -->
 
 ```
 ## [1] 0.8458399
 ```
 
-* Yearly number of Globalisation Party members in Chulwalar
+* Yearly number of Globalisation Party members in Chulwalar  
 ![](AnalysisandForecast_files/figure-html/unnamed-chunk-15-1.png)<!-- -->
 
 ```
@@ -207,18 +207,18 @@ The indicators are as follows:
 ```
 
 
-* Monthly Average Export Price Index for Chulwalar
+* Monthly Average Export Price Index for Chulwalar  
 
 
-* Monthly Producer Price Index (PPI) for Etel in Chulwalar
-
-
-
-* National Holidays
+* Monthly Producer Price Index (PPI) for Etel in Chulwalar  
 
 
 
-* Chulwalar Index (Total value of all companies in Chulwalar)
+* National Holidays  
+
+
+
+* Chulwalar Index (Total value of all companies in Chulwalar)  
 
 
 
@@ -228,16 +228,11 @@ The indicators are as follows:
 
 
 
-*	Proposed spending for National Holidays
+*	Proposed spending for National Holidays  
 
 The indicators will be converted into individual  vectors and subsequently converted into time series. The correlation of the indicators will then be tested against the As Is exports for Chulwalar. 
 
 
 
 
-###Forecasting models
-
-* Ses : Simple Exponential Smoothing model
-* Holts Model  
-* Holts Winter Model  
 

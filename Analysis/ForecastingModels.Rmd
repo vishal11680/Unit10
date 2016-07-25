@@ -8,6 +8,12 @@ output:
 ---
 
 
+###Forecasting models  
+
+* Ses : Simple Exponential Smoothing model  
+* Holts Model  
+* Holt Winter Model  
+
 * *Setting current working directory to Analysis folder*  
     ```{r echo=FALSE}  
       #getwd()  
@@ -37,11 +43,11 @@ read_chunk('ForecastCode.R')
 
 ```
 
-#1. Plot SES model
+* Plot SES model
 
-* *Simple Exponential Smoothing* : In this type of model, forecast are calculated using averages from past values. Weight on average values reduce as values become older in timeseries.  We will plot a Simple Exponential Smoothing chart for "TotalAsIs" timeseries that contains observed data. Simple Exponential Smoothing can be used in case there is no trend and/or seasonal component in the data.  
+  * *Simple Exponential Smoothing* : In this type of model, forecast are calculated using averages from past values. Weight on average values reduce as values become older in timeseries.  We will plot a Simple Exponential Smoothing chart for "TotalAsIs" timeseries that contains observed data. Simple Exponential Smoothing can be used in case there is no trend and/or seasonal component in the data.  
 
-*In below plot we are forecasting 12 values using SES model.*  
+    *In below plot we are forecasting 12 values using SES model.*  
 
 
 ```{r echo=FALSE}
@@ -54,9 +60,9 @@ legend("topleft",lty=1, col=c(1,"green"), c("data", expression(alpha == 0.671)),
 ```
 
 
-* *Holt's various models (linear, exponential, damped, damped with exponential)
+* Holt's various models (auto, exponential, damped, damped with exponential)  
 
-    * Linear Trend  
+    * Holt Auto    
     ```{r echo=FALSE}
     #summary(Model_holt_1)
     plot(Model_holt_1)
@@ -81,15 +87,15 @@ legend("topleft",lty=1, col=c(1,"green"), c("data", expression(alpha == 0.671)),
     ```{r echo=FALSE}
     #summary(Model_holt_4)
     plot(Model_holt_4)
-    plot(Model_holt_4$model$state)
+    plot(Model_holt_4$model$state)  
     ```
     
-    
 
-# Combined Chart for all models  
+
+# SES and Holts models  
 
 ```{r echo=FALSE}
-plot(Model_holt_1, plot.conf=FALSE, ylab="Exports Chulwalar  )", xlab="Year", main="", fcol="white", type="o")
+plot(Model_holt_1, plot.conf=FALSE, ylab="( Exports Chulwalar )", xlab="Year", fcol="white", type="o", main="SES and Holts Models")
 lines(fitted(Model_ses), col="purple", type="o")
 lines(fitted(Model_holt_1), col="blue", type="o")
 lines(fitted(Model_holt_2), col="red", type="o")
@@ -101,8 +107,18 @@ lines(Model_holt_2$mean, col="red", type="o")
 lines(Model_holt_3$mean, col="green", type="o")
 lines(Model_holt_4$mean, col="orange", type="o")
 legend("topleft",lty=1, col=c(1,"purple","blue","red","green","orange"), c("data", "SES","Holts auto", "Exponential", "Additive Damped", "Multiplicative Damped"),pch=1)
-```
+```  
 
+# Holt Winters' models  
+
+```{r echo=FALSE}
+plot(Model_hw_1, ylab="( Exports Chulwalar )", plot.conf=FALSE, type="o", fcol="white", xlab="Year", main="Holt-Winters' Additive and Multiplicative Forecasts")
+lines(fitted(Model_hw_1), col="red", lty=2)
+lines(fitted(Model_hw_2), col="green", lty=2)
+lines(Model_hw_1$mean, type="o", col="red")
+lines(Model_hw_2$mean, type="o", col="green")
+legend("topleft",lty=1, pch=1, col=1:3, c("data","Holt Winters' Additive","Holt Winters' Multiplicative"))
+```  
 
 
     

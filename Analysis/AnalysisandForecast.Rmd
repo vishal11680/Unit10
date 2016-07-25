@@ -73,70 +73,70 @@ monthplot(TotalAsIs_stl$time.series[,"seasonal"], main="", ylab="Seasonal")
 
 The indicators are as follows:
 
-* Monthly Change in Export Price Index (CEPI)
+* Monthly Change in Export Price Index (CEPI)  
 ```{r}
 plot(CEPI, main="CEPI")
 cor(TotalAsIs, CEPI)
 ```
 
-* Monthly Satisfaction Index (SI) government based data
+* Monthly Satisfaction Index (SI) government based data  
 ```{r}  
 plot(SIGov, main="SIGov")
 cor(TotalAsIs, SIGov)
 ```  
 
-* Average monthly temperatures in Chulwalar
+* Average monthly temperatures in Chulwalar  
 ```{r}
 plot(Temperature, main="Temperature")
 cor(TotalAsIs, Temperature)
 ```  
 
-* Monthly births in Chulwalar
+* Monthly births in Chulwalar  
 ```{r}
 plot(Births, main="Births")
 cor(TotalAsIs, Births)
 ```  
 
-* Monthly Satisfaction Index (SI) external index 
+* Monthly Satisfaction Index (SI) external index  
 ```{r}
 plot(SIExtern, main="SIExtern")
 cor(TotalAsIs, SIExtern)
 ```  
 
-* Yearly Exports from Urbano
+* Yearly Exports from Urbano  
 ```{r}
 plot(UrbanoExports, main="UrbanoExports")
 cor(TotalAsIs, UrbanoExports)
 ```  
 
-* Yearly number of Globalisation Party members in Chulwalar
+* Yearly number of Globalisation Party members in Chulwalar  
 ```{r}
 plot(GlobalisationPartyMembers, main="GlobalisationPartyMembers")
 cor(TotalAsIs, GlobalisationPartyMembers)
 ```  
 
 
-* Monthly Average Export Price Index for Chulwalar
+* Monthly Average Export Price Index for Chulwalar  
 ```{r}
 #plot(AEPI, main="AEPI")
 #cor(TotalAsIs, AEPI)
 ```  
 
-* Monthly Producer Price Index (PPI) for Etel in Chulwalar
+* Monthly Producer Price Index (PPI) for Etel in Chulwalar  
 ```{r}
 #plot(PPIEtel, main="PPIEtel")
 #cor(TotalAsIs, PPIEtel)
 ```  
 
 
-* National Holidays
+* National Holidays  
 ```{r}
 #plot(NationalHolidays, main="NationalHolidays")
 #cor(TotalAsIs, NationalHolidays)
 ```  
 
 
-* Chulwalar Index (Total value of all companies in Chulwalar)
+* Chulwalar Index (Total value of all companies in Chulwalar)  
 ```{r}
 #plot(ChulwalarIndex, main="ChulwalarIndex")
 #cor(TotalAsIs, ChulwalarIndex)
@@ -152,7 +152,7 @@ cor(TotalAsIs, GlobalisationPartyMembers)
 
 
 
-*	Proposed spending for National Holidays
+*	Proposed spending for National Holidays  
 ```{r}
 #plot(IndependenceDayPresents, main="IndependenceDayPresents")
 #cor(TotalAsIs, IndependenceDayPresents)
@@ -162,9 +162,4 @@ The indicators will be converted into individual  vectors and subsequently conve
 
 
 
-###Forecasting models
-
-* Ses : Simple Exponential Smoothing model
-* Holts Model  
-* Holts Winter Model  
 

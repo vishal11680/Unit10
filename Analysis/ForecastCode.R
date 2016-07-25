@@ -41,6 +41,14 @@ Model_hw_1 <- hw(TotalAsIs ,seasonal="additive",h=12)
 Model_hw_2 <- hw(TotalAsIs ,seasonal="multiplicative",h=12)
 
 
+#Code to extract forecast from model data  
+Model_hw_1_df <-as.data.frame(Model_hw_1) 
+Model_hw_1_PointForecast <- ts(Model_hw_1_df$"Point Forecast", start=c(2014,1), end=c(2014,12), frequency=12)
+
+
+Model_hw_2_df <-as.data.frame(Model_hw_2) 
+Model_hw_2_PointForecast <- ts(Model_hw_2_df$"Point Forecast", start=c(2014,1), end=c(2014,12), frequency=12)
+
 
 
 
