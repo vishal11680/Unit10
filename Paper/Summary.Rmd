@@ -35,4 +35,12 @@ Hence, it appears that Holt Winters Additive model is the **best model** to choo
   ggplot(stat_df, aes(x=ModelName, y=BIC, fill=ModelName)) + geom_bar(stat='identity',width=0.5, position="dodge")  
 ```
     
+# Final Forecast for 2014 Exports 
+
+```{r echo=FALSE}
+plot(Model_hw_1, ylab="( Exports Chulwalar )", plot.conf=FALSE, type="o", fcol="white", xlab="Year", main="Holt-Winters' Additive Forecasts")
+lines(fitted(Model_hw_1), col="red", lty=2)
+lines(Model_hw_1$mean, type="o", col="red")
+legend("topleft",lty=1, pch=1, col=1:3, c("data","Holt Winters' Additive"))
+```  
     

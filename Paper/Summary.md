@@ -62,4 +62,7 @@ Hence, it appears that Holt Winters Additive model is the **best model** to choo
 
 ![](Summary_files/figure-html/unnamed-chunk-2-1.png)<!-- -->![](Summary_files/figure-html/unnamed-chunk-2-2.png)<!-- -->![](Summary_files/figure-html/unnamed-chunk-2-3.png)<!-- -->
     
+# Final Forecast for 2014 Exports 
+
+![](Summary_files/figure-html/unnamed-chunk-3-1.png)<!-- -->
     
